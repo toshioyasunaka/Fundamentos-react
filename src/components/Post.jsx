@@ -1,5 +1,7 @@
 import styles from './Post.module.css';
 
+import { Comment } from './Comment';
+
 export function Post() {
   return (
     <article className={styles.post}>
@@ -24,6 +26,12 @@ export function Post() {
           <a href="">#nlw </a>
           <a href="">#rocketseat</a>
         </p>
+      </div>
+
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
     </article>
   )

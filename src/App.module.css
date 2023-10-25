@@ -9,3 +9,13 @@
   align-items: flex-start; /* por padrão é "stretch", que esticaria as duas colunas para ficarem do mesmo tamanho. Com o "flex-start" as duas colunas 
   serão alinhadas fixas no topo, não forçando essa esticada para ficarem do mesmo tamanho */
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%; /* 87,5% dos 16px de font-size para ambiente desktop. Deve ser em percentual para que não perca a estilizações feitas em "rem" */
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}

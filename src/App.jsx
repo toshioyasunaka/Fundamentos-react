@@ -7,6 +7,17 @@ import { Sidebar } from './components/Sidebar';
 import './global.css';
 import styles from './App.module.css';
 
+const post = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/toshioyasunaka.png",
+      name: "Toshio Yasunaka",
+      role: "Web Developer",
+    }
+  },
+]
+
 export function App() {
   return (
     <div>

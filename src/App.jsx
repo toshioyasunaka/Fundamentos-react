@@ -7,14 +7,35 @@ import { Sidebar } from './components/Sidebar';
 import './global.css';
 import styles from './App.module.css';
 
-const post = [
+const posts = [
   {
     id: 1,
     author: {
       avatarUrl: "https://github.com/toshioyasunaka.png",
       name: "Toshio Yasunaka",
       role: "Web Developer",
-    }
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋'},
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type: 'link', content: '👉 jane.design/doctorcare'},   
+    ],
+    publishedAt: new Date('2023-10-25 06:15:00')
+  },
+
+  {
+    id: 2,
+    author: {
+      avatarUrl: "https://github.com/maykbrito.png",
+      name: "Mayk Brito",
+      role: "Senior Developer",
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋'},
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type: 'link', content: '👉 jane.design/doctorcare'},   
+    ],
+    publishedAt: new Date('2023-10-28 06:15:00')
   },
 ]
 
@@ -27,15 +48,16 @@ export function App() {
         <Sidebar />
 
         <main>
-          <Post 
-            author="Toshio Yasunaka" 
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ipsam animi, tempore nihil dolore perferendis sit temporibus cum, quasi aliquam quidem aut iure tenetur accusantium dicta? Enim fuga laboriosam repellat." 
-          />
-
-          <Post 
-            author="Walter Yasunaka" 
-            content="Um novo post muito legal." 
-          />
+          {posts.map(post => {
+            return (
+              <Post
+                key={post.id}
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
 
       </div>
